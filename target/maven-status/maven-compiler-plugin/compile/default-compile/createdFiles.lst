@@ -1,0 +1,5 @@
+com\jpabook\jpashop\JpabookApplication.class
+com\jpabook\jpashop\Member.class
+com\jpabook\jpashop\HelloController.class
+com\jpabook\jpashop\Hello.class
+com\jpabook\jpashop\MemberRepository.class
