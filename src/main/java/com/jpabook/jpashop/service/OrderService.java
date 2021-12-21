@@ -1,5 +1,7 @@
 package com.jpabook.jpashop.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +13,7 @@ import com.jpabook.jpashop.domain.item.Item;
 import com.jpabook.jpashop.repositroy.ItemRepository;
 import com.jpabook.jpashop.repositroy.MemberRepository;
 import com.jpabook.jpashop.repositroy.OrderRepository;
+import com.jpabook.jpashop.repositroy.OrderSearch;
 
 import lombok.RequiredArgsConstructor;
 
@@ -59,8 +62,8 @@ public class OrderService {
 		order.cancel();
 	}
 	
-	//검색
-//	public List<Order> searchOrder(OrderSearch orderSearch){
-//		return orderRepository.findAll(orderSearch);
-//	}
+	//	검색
+	public List<Order> searchOrder(OrderSearch orderSearch){
+		return orderRepository.findAll(orderSearch);
+	}
 }

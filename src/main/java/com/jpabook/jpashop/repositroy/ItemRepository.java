@@ -22,6 +22,7 @@ public class ItemRepository {
 		else em.merge(item);
 	}
 	
+
 	public Item findOne(Long id) {
 		return em.find(Item.class, id);
 	}
