@@ -1,9 +1,13 @@
 package com.jpabook.jpashop.Controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter
+@NoArgsConstructor
 public class BookForm {
 
 	private Long id;
@@ -14,4 +18,6 @@ public class BookForm {
 	
 	private String author;
 	private String isbn;
+	
+	
 }

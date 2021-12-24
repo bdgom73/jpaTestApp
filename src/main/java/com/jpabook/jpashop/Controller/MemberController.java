@@ -38,10 +38,12 @@ public class MemberController {
 			return "members/createForm";
 		}
 		
-		Address address = new Address(form.getCity(),form.getStreet(),form.getZipcode());
 		Member member = new Member();
-		member.setName(form.getName());
-		member.setAddress(address);
+		member.createMember(
+				form.getName(), 
+				new Address(form.getCity(),form.getStreet(),form.getZipcode())
+			);
+		
 		
 		memberService.join(member);
 		return "redirect:/";
