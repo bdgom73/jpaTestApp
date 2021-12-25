@@ -46,3 +46,52 @@
                     MemberService.java
                     OrderService.java
 ```
+
+2021-12-24
+```cmd
+─jpabook
+        └─jpashop
+            │  InitDB.java
+            │  JpabookApplication.java
+            │
+            ├─api
+            │      MemberApiController.java
+            │
+            ├─Controller
+            │      BookForm.java
+            │      HomeController.java
+            │      ItemController.java
+            │      MemberController.java
+            │      MemberForm.java
+            │      OrderController.java
+            │
+            ├─domain
+            │  │  Address.java
+            │  │  Category.java
+            │  │  Delivery.java
+            │  │  DeliveryStauts.java
+            │  │  Member.java
+            │  │  Order.java
+            │  │  OrderItem.java
+            │  │  OrderStatus.java
+            │  │
+            │  └─item
+            │          Album.java
+            │          Book.java
+            │          Item.java
+            │          Movie.java
+            │
+            ├─exception
+            │      NotEnoughStockException.java
+            │
+            ├─repositroy
+            │      ItemRepository.java
+            │      MemberRepository.java
+            │      OrderRepository.java
+            │      OrderSearch.java
+            │
+            └─service
+                    ItemService.java
+                    MemberService.java
+                    OrderService.java
+```
