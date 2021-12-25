@@ -54,8 +54,8 @@
             │  InitDB.java
             │  JpabookApplication.java
             │
-            ├─api
-            │      MemberApiController.java
+            ├─api (add)
+            │      MemberApiController.java (add)
             │
             ├─Controller
             │      BookForm.java
