@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jpabook.jpashop.domain.Member;
-import com.jpabook.jpashop.repositroy.MemberRepository;
+import com.jpabook.jpashop.repository.MemberRepository;
 
 import lombok.RequiredArgsConstructor;
 

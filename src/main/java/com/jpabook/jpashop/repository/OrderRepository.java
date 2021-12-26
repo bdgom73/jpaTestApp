@@ -1,5 +1,6 @@
-package com.jpabook.jpashop.repositroy;
+package com.jpabook.jpashop.repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -8,8 +9,13 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
+import com.jpabook.jpashop.api.OrderSimpleApiController;
+import com.jpabook.jpashop.domain.Address;
 import com.jpabook.jpashop.domain.Order;
+import com.jpabook.jpashop.domain.OrderStatus;
+import com.jpabook.jpashop.repository.order.query.OrderSimpleQueryDto;
 
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Repository
@@ -65,4 +71,15 @@ public class OrderRepository {
 		 
 		 return query.getResultList();	
 	}
+
+	public List<Order> findAllWithMemeberDelivery() {
+		return em.createQuery(
+						"select o from Order o" + 
+						" join fetch o.member m" +
+						" join fetch o.delivery d", Order.class)
+						.getResultList();
+	}
+
+	
+	
 }

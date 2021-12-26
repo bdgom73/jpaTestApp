@@ -1,4 +1,4 @@
-package com.jpabook.jpashop.repositroy;
+package com.jpabook.jpashop.repository;
 
 import java.util.List;
 

@@ -10,10 +10,10 @@ import com.jpabook.jpashop.domain.Member;
 import com.jpabook.jpashop.domain.Order;
 import com.jpabook.jpashop.domain.OrderItem;
 import com.jpabook.jpashop.domain.item.Item;
-import com.jpabook.jpashop.repositroy.ItemRepository;
-import com.jpabook.jpashop.repositroy.MemberRepository;
-import com.jpabook.jpashop.repositroy.OrderRepository;
-import com.jpabook.jpashop.repositroy.OrderSearch;
+import com.jpabook.jpashop.repository.ItemRepository;
+import com.jpabook.jpashop.repository.MemberRepository;
+import com.jpabook.jpashop.repository.OrderRepository;
+import com.jpabook.jpashop.repository.OrderSearch;
 
 import lombok.RequiredArgsConstructor;
 

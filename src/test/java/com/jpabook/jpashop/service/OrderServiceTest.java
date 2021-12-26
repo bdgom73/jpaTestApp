@@ -20,7 +20,7 @@ import com.jpabook.jpashop.domain.OrderStatus;
 import com.jpabook.jpashop.domain.item.Book;
 import com.jpabook.jpashop.domain.item.Item;
 import com.jpabook.jpashop.exception.NotEnoughStockException;
-import com.jpabook.jpashop.repositroy.OrderRepository;
+import com.jpabook.jpashop.repository.OrderRepository;
 
 @SpringBootTest
 @Transactional

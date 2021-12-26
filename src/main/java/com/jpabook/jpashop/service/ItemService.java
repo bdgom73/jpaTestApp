@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jpabook.jpashop.domain.item.Book;
 import com.jpabook.jpashop.domain.item.Item;
-import com.jpabook.jpashop.repositroy.ItemRepository;
+import com.jpabook.jpashop.repository.ItemRepository;
 
 import lombok.RequiredArgsConstructor;
 
