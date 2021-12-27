@@ -13,8 +13,8 @@ import com.jpabook.jpashop.domain.Order;
 import com.jpabook.jpashop.domain.OrderStatus;
 import com.jpabook.jpashop.repository.OrderRepository;
 import com.jpabook.jpashop.repository.OrderSearch;
-import com.jpabook.jpashop.repository.order.query.OrderSimpleQueryDto;
-import com.jpabook.jpashop.repository.order.query.OrderSimpleQueryRepository;
+import com.jpabook.jpashop.repository.order.simpleQuery.OrderSimpleQueryDto;
+import com.jpabook.jpashop.repository.order.simpleQuery.OrderSimpleQueryRepository;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
