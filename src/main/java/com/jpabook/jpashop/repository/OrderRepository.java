@@ -1,6 +1,5 @@
 package com.jpabook.jpashop.repository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,12 +8,8 @@ import javax.persistence.TypedQuery;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import com.jpabook.jpashop.api.OrderSimpleApiController;
-import com.jpabook.jpashop.domain.Address;
 import com.jpabook.jpashop.domain.Order;
-import com.jpabook.jpashop.domain.OrderStatus;
 
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Repository

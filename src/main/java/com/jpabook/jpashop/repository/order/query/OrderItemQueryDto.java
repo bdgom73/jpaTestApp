@@ -1,8 +1,11 @@
 package com.jpabook.jpashop.repository.order.query;
 
+
 import lombok.Data;
+import lombok.Getter;
 
 @Data
+@Getter 
 public class OrderItemQueryDto {
 
 	private Long orderId;
@@ -10,12 +13,14 @@ public class OrderItemQueryDto {
 	private int orderPrice;
 	private int count;
 	
-	public OrderItemQueryDto(Long orderId, String itemName, int orderPrice, int count) {
+	public OrderItemQueryDto(
+			Long orderId, String itemName, int orderPrice, int count) {
 		this.orderId = orderId;
 		this.itemName = itemName;
 		this.orderPrice = orderPrice;
 		this.count = count;
 	}
-	
+
+
 	
 }
