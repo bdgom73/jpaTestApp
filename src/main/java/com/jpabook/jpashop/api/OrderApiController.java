@@ -19,6 +19,7 @@ import com.jpabook.jpashop.repository.order.query.OrderFlatDto;
 import com.jpabook.jpashop.repository.order.query.OrderItemQueryDto;
 import com.jpabook.jpashop.repository.order.query.OrderQueryDto;
 import com.jpabook.jpashop.repository.order.query.OrderQueryRepository;
+import com.jpabook.jpashop.service.query.OrderDto;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -30,8 +31,11 @@ public class OrderApiController {
 	private final OrderRepository orderRepository;
 	private final OrderQueryRepository orderQueryRepository;
 	
+	/** 2021 12.29 OSIV -> false */
+	
 	/**
 	 * 1 + N 문제
+	 * 엔티티로 직접반환
 	 * */
 	@GetMapping("/api/v1/orders")
 	public List<Order> ordersV1(){
@@ -48,6 +52,9 @@ public class OrderApiController {
 		return orders;
 	}
 	
+	/**
+	 * 엔티티 조회 후 DTO로 변환
+	 * */
 	@GetMapping("/api/v2/orders")
 	public List<OrderDto> ordersV2(){
 		List<Order> orders = orderRepository.findAll(new OrderSearch());
@@ -89,12 +96,17 @@ public class OrderApiController {
 		return orderQueryRepository.findOrderQueryDtos();
 	}
 	
+	/**
+	 * DTO로 직접받기
+	 * in절로 한번에 가져와서 조립해서 리턴
+	 * */
 	@GetMapping("/api/v5/orders")
 	public List<OrderQueryDto> ordersV5(){
 		return orderQueryRepository.findAllByDto_optimization();
 	}
 	
 	/**
+	 * DTO로 직접받기
 	 * 쿼리한번으로 가져와서 조립
 	 * */
 	@GetMapping("/api/v6/orders")
@@ -120,41 +132,5 @@ public class OrderApiController {
 					)
 				).collect(Collectors.toList());
 	}
-	
-	@Data
-	static class OrderDto{
 		
-		private Long orderId;
-		private String name;
-		private LocalDateTime orderDate;
-		private OrderStatus orderStatus;
-		private Address address;
-		private List<OrderItemDto> orderItems;
-		
-		public OrderDto(Order order) {
-			orderId = order.getId();
-			name = order.getMember().getName();
-			orderDate = order.getOrderDate();
-			orderStatus = order.getStatus();
-			address = order.getDelivery().getAddress();		
-			orderItems = order.getOrderItems().stream().map(OrderItemDto::new).collect(Collectors.toList());
-		}
-			
-	}
-	
-	@Data
-	static class OrderItemDto{
-		
-		private String itemName;
-		private int orderPrice;
-		private int count;
-		private int totalPrice;
-		
-		public OrderItemDto(OrderItem orderItem) {
-			itemName = orderItem.getItem().getName();
-			orderPrice = orderItem.getOrderPrice();
-			count = orderItem.getCount();
-			totalPrice = orderItem.getTotalPrice();
-		}
-	}
 }
